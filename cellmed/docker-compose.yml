@@ -1,0 +1,103 @@
+# eCMD — portail opérateurs CellMed + portail assuré Certificat médical (backend partagé)
+#
+# Mode Lakebase (données dans Databricks) :
+#   cp .env.example .env   # puis renseigner les variables LAKEBASE_* et DATABRICKS_*
+#   docker compose up --build
+#   → CellMed : http://localhost:8080   Certificat médical : http://localhost:8081
+#
+# Mode local (Postgres dans un conteneur, sans Databricks) :
+#   docker compose --profile local-db up --build      (avec DB_MODE=postgres dans .env)
+#
+# AWS simulé avec LocalStack (SES + SNS pour les codes de vérification, Lambda + Step Functions + SES pour
+# les invitations automatiques des nouveaux sinistres Open) :
+#   docker compose --profile aws up --build           (avec NOTIF_MODE=aws et PORTAIL_SECRET_LIENS dans .env)
+
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://cellmed:cellmed@db:5432/cellmed}
+      PORTAIL_URL: ${PORTAIL_URL:-http://localhost:8081}
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "${CELLMED_PORT:-8080}:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  certificat:
+    build: ../certificat-medical/frontend
+    ports:
+      - "${CERTIFICAT_PORT:-8081}:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  db:
+    profiles: ["local-db"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: cellmed
+      POSTGRES_PASSWORD: cellmed
+      POSTGRES_DB: cellmed
+    volumes:
+      - cellmed-pg:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  # Construit le paquet des Lambdas de soumission : code partagé du backend (app/) + dépendances Python.
+  # S'exécute une fois puis s'arrête ; LocalStack attend qu'il ait terminé.
+  lambda-build:
+    profiles: ["aws"]
+    image: python:3.12-slim
+    volumes:
+      - ./backend/app:/src/app:ro
+      - ../integration/step-functions/lambdas:/src/lambdas:ro
+      - ../integration/step-functions/construire_lambdas.py:/src/construire_lambdas.py:ro
+      - lambda-build:/build
+    command: ["python", "/src/construire_lambdas.py"]
+
+  localstack:
+    profiles: ["aws"]
+    image: localstack/localstack:latest
+    depends_on:
+      lambda-build:
+        condition: service_completed_successfully
+    environment:
+      # Jeton du compte LocalStack (obligatoire depuis 2026 : https://app.localstack.cloud → Auth Token)
+      LOCALSTACK_AUTH_TOKEN: ${LOCALSTACK_AUTH_TOKEN:-}
+      # Secret des liens signés (partagé avec le backend), base du portail, expéditeur SES (lus dans .env)
+      PORTAIL_SECRET_LIENS: ${PORTAIL_SECRET_LIENS:-}
+      PORTAIL_URL: ${PORTAIL_URL:-http://localhost:8081}
+      SES_EXPEDITEUR: ${SES_EXPEDITEUR:-no-reply@cellmed.fr}
+      SERVICES: ses,sns,lambda,stepfunctions,events,iam,sts,logs
+      AWS_DEFAULT_REGION: ${AWS_REGION:-eu-west-3}
+      # Les Lambdas tournent dans des conteneurs rattachés au réseau de ce compose (accès à http://localstack:4566)
+      LAMBDA_DOCKER_NETWORK: ${COMPOSE_PROJECT_NAME:-cellmed}_default
+      # Connexion à la base pour les Lambdas de soumission (mêmes valeurs que le backend)
+      DB_MODE: ${DB_MODE:-lakebase}
+      DB_SCHEMA: ${DB_SCHEMA:-cellmed}
+      DATABASE_URL: ${DATABASE_URL:-postgresql+psycopg://cellmed:cellmed@db:5432/cellmed}
+      LAKEBASE_PROJECT: ${LAKEBASE_PROJECT:-}
+      LAKEBASE_HOST: ${LAKEBASE_HOST:-}
+      LAKEBASE_DATABASE: ${LAKEBASE_DATABASE:-databricks_postgres}
+      LAKEBASE_USER: ${LAKEBASE_USER:-}
+      DATABRICKS_HOST: ${DATABRICKS_HOST:-}
+      DATABRICKS_CLIENT_ID: ${DATABRICKS_CLIENT_ID:-}
+      DATABRICKS_CLIENT_SECRET: ${DATABRICKS_CLIENT_SECRET:-}
+    ports:
+      - "4566:4566"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Déploiement automatique des Lambdas + Step Functions au démarrage
+      - ../integration/step-functions/deployer_localstack.sh:/etc/localstack/init/ready.d/deployer_localstack.sh:ro
+      - ../integration/step-functions:/opt/ecmd/step-functions:ro
+      - lambda-build:/opt/ecmd/build:ro
+
+volumes:
+  cellmed-pg:
+  lambda-build:

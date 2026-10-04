@@ -1,0 +1,73 @@
+{
+  "Comment": "eCMD — invitations automatiques. Déclenchée par le job Databricks avec la liste des nouveaux sinistres (gold.nouveau_sinistre) : pour chacun, génère un lien signé puis envoie l'email d'invitation via SES.",
+  "StartAt": "NouveauxSinistres",
+  "States": {
+    "NouveauxSinistres": {
+      "Type": "Choice",
+      "Choices": [
+        { "Variable": "$.sinistres[0]", "IsPresent": true, "Next": "InviterChaqueAssure" }
+      ],
+      "Default": "AucunNouveauSinistre"
+    },
+    "AucunNouveauSinistre": {
+      "Type": "Succeed"
+    },
+    "InviterChaqueAssure": {
+      "Type": "Map",
+      "ItemsPath": "$.sinistres",
+      "MaxConcurrency": 10,
+      "ResultPath": "$.resultats",
+      "Iterator": {
+        "StartAt": "GenererLien",
+        "States": {
+          "GenererLien": {
+            "Type": "Task",
+            "Resource": "${GENERER_LIEN_FUNCTION_ARN}",
+            "Retry": [
+              {
+                "ErrorEquals": ["Lambda.ServiceException", "Lambda.TooManyRequestsException", "Lambda.SdkClientException"],
+                "IntervalSeconds": 2, "MaxAttempts": 3, "BackoffRate": 2
+              }
+            ],
+            "Catch": [
+              { "ErrorEquals": ["States.ALL"], "ResultPath": "$.erreur", "Next": "EchecInvitation" }
+            ],
+            "Next": "EnvoyerEmail"
+          },
+          "EnvoyerEmail": {
+            "Type": "Task",
+            "Resource": "${ENVOYER_INVITATION_FUNCTION_ARN}",
+            "Retry": [
+              {
+                "ErrorEquals": ["ErreurTemporaire", "Lambda.ServiceException", "Lambda.TooManyRequestsException"],
+                "IntervalSeconds": 5, "MaxAttempts": 4, "BackoffRate": 2
+              }
+            ],
+            "Catch": [
+              { "ErrorEquals": ["States.ALL"], "ResultPath": "$.erreur", "Next": "EchecInvitation" }
+            ],
+            "End": true
+          },
+          "EchecInvitation": {
+            "Type": "Pass",
+            "Parameters": {
+              "numero_sinistre.$": "$.numero_sinistre",
+              "statut": "echec",
+              "erreur.$": "$.erreur.Error",
+              "cause.$": "$.erreur.Cause"
+            },
+            "End": true
+          }
+        }
+      },
+      "Next": "Bilan"
+    },
+    "Bilan": {
+      "Type": "Pass",
+      "Parameters": {
+        "resultats.$": "$.resultats"
+      },
+      "End": true
+    }
+  }
+}

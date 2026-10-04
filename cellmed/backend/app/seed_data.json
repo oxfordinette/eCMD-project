@@ -1,0 +1,1268 @@
+{
+ "dossiers": [
+  {
+   "id": "MQC-2024-00142",
+   "status": "valider",
+   "parcours": [
+    "valider"
+   ],
+   "urgence": "Haute",
+   "type": "Initial",
+   "nom": "Martin",
+   "prenom": "Sophie",
+   "dob": "12/03/1981",
+   "nss": "2810312075042",
+   "profession": "Ingénieure R&D",
+   "college": "Cadre",
+   "telephone": "06 12 34 56 78",
+   "email": "sophie.martin@thalesgroup.com",
+   "adresse": "14 rue des Lilas, 92190 Meudon",
+   "societe": "Thales Group",
+   "dossier_sinistre": "SIN-2024-08741",
+   "numero_mercer": "MC-TH-004521",
+   "partition": "MERCERAPPA",
+   "entreprise": "Thales",
+   "assureur": "Allianz",
+   "debut": "08/07/2024",
+   "fin": "05/08/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Initial",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "Lombosciatique L4-L5",
+   "cim10": "M51.1",
+   "commentaire": "Douleurs lombaires irradiant dans le membre inférieur gauche. Traitement par antalgiques de palier 2 et kinésithérapie. Repos strict recommandé.",
+   "traitement": "Paracétamol (500mg - 3 fois par jour, si douleur)\nIbuprofène (300mg - 1 par jour le midi pendant le repas)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Oui",
+   "patho_anterieure": "Oui",
+   "patho_consecutive": "Non",
+   "ald": "Non",
+   "soumission": "15/07/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical initial.pdf",
+     "type": "pdf",
+     "size": "142 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "Ordonnance Dr. Petit.pdf",
+     "type": "pdf",
+     "size": "88 Ko"
+    },
+    {
+     "id": "doc3",
+     "name": "IRM lombaire 04-07-2024.jpg",
+     "type": "img",
+     "size": "2.3 Mo"
+    }
+   ],
+   "historique": [
+    {
+     "date": "15/07/2024 13:02",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "15/07/2024 13:47",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "15/07/2024 14:32",
+     "action": "Formulaire soumis par l'assuré",
+     "auteur": "Sophie Martin (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "15/07/2024 14:32",
+     "action": "Documents uploadés (3 fichiers)",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "15/07/2024 16:00",
+     "action": "Dossier assigné à Dr. Martin",
+     "auteur": "Système CellMed",
+     "color": "#64748b"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "15/07/2024 17:10",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Dossier complet à première vue. Je lance la validation du certificat initial."
+    },
+    {
+     "date": "16/07/2024 09:05",
+     "auteur": "Dr. Lefèvre",
+     "role": "Médecin conseil",
+     "texte": "IRM cohérente avec le diagnostic. Pas d'objection à la validation."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00139",
+   "status": "valider",
+   "parcours": [
+    "valider"
+   ],
+   "urgence": "Moyenne",
+   "type": "Suivi",
+   "nom": "Dubois",
+   "prenom": "Thomas",
+   "dob": "04/09/1975",
+   "nss": "1750904123456",
+   "profession": "Analyste financier",
+   "college": "Cadre",
+   "telephone": "06 23 45 67 89",
+   "email": "thomas.dubois@bnpparibas.com",
+   "adresse": "8 avenue Victor Hugo, 75116 Paris",
+   "societe": "BNP Paribas",
+   "dossier_sinistre": "SIN-2024-08623",
+   "numero_mercer": "MC-BNP-011892",
+   "partition": "MERCERAPPA",
+   "entreprise": "BNP Paribas",
+   "assureur": "AXA France",
+   "debut": "01/07/2024",
+   "fin": "31/07/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Suivi",
+   "duree": "30",
+   "temps_partiel": "Non",
+   "patho": "Dépression sévère",
+   "cim10": "F32.2",
+   "commentaire": "Épisode dépressif majeur avec anhédonie et troubles du sommeil. Traitement antidépresseur en cours depuis 3 semaines.",
+   "traitement": "Escitalopram (10mg - 1 par jour le matin)\nZopiclone (7,5mg - au coucher si besoin)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Non",
+   "ald": "Oui",
+   "soumission": "12/07/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical suivi.pdf",
+     "type": "pdf",
+     "size": "98 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "Ordonnance psychiatre.pdf",
+     "type": "pdf",
+     "size": "76 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "12/07/2024 07:45",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "12/07/2024 08:30",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "12/07/2024 09:15",
+     "action": "Formulaire suivi soumis",
+     "auteur": "Thomas Dubois (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "12/07/2024 09:15",
+     "action": "Documents uploadés (2 fichiers)",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "12/07/2024 10:00",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Suivi d'un dossier dépression déjà connu. Ordonnance psychiatre jointe, cohérente avec le traitement en cours."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00136",
+   "status": "valider",
+   "parcours": [
+    "valider"
+   ],
+   "urgence": "Haute",
+   "type": "Initial",
+   "nom": "Leclerc",
+   "prenom": "Marie",
+   "dob": "27/11/1988",
+   "nss": "2881127087654",
+   "profession": "Technicienne de production",
+   "college": "Non-cadre",
+   "telephone": "06 34 56 78 90",
+   "email": "marie.leclerc@airbus.com",
+   "adresse": "22 rue Saint-Exupéry, 31700 Blagnac",
+   "societe": "Airbus France",
+   "dossier_sinistre": "SIN-2024-08490",
+   "numero_mercer": "MC-AIR-007733",
+   "partition": "MERCERAPPA",
+   "entreprise": "Airbus France",
+   "assureur": "Generali",
+   "debut": "25/06/2024",
+   "fin": "22/07/2024",
+   "type_arret": "Accident de travail",
+   "type_cert": "Initial",
+   "duree": "27",
+   "temps_partiel": "Non",
+   "patho": "Fracture du poignet droit",
+   "cim10": "S62.5",
+   "commentaire": "Fracture du radius distal suite à chute au travail. Immobilisation plâtrée. Chirurgie envisagée si déplacement secondaire.",
+   "traitement": "Paracétamol (1g - 3 fois par jour, si douleur)\nAttelle d'immobilisation en place",
+   "hospitalisation": "Oui",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Oui",
+   "ald": "Non",
+   "soumission": "08/07/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical initial.pdf",
+     "type": "pdf",
+     "size": "115 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "Radio poignet droit.jpg",
+     "type": "img",
+     "size": "1.8 Mo"
+    },
+    {
+     "id": "doc3",
+     "name": "Déclaration AT employeur.pdf",
+     "type": "pdf",
+     "size": "203 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "08/07/2024 09:52",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "08/07/2024 10:37",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "08/07/2024 11:22",
+     "action": "Formulaire soumis par l'assuré",
+     "auteur": "Marie Leclerc (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "08/07/2024 11:22",
+     "action": "Documents uploadés (3 fichiers)",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "09/07/2024 08:30",
+     "action": "Dossier marqué URGENT (AT)",
+     "auteur": "Système CellMed",
+     "color": "#c53532"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "08/07/2024 14:00",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Accident du travail confirmé par la déclaration employeur. Urgence haute car fracture avec risque de chirurgie."
+    },
+    {
+     "date": "09/07/2024 08:45",
+     "auteur": "Système CellMed",
+     "role": "Système",
+     "texte": "Rappel automatique : dossier AT à traiter en priorité (SLA 48h)."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00131",
+   "status": "valider",
+   "parcours": [
+    "valider"
+   ],
+   "urgence": "Basse",
+   "type": "Suivi",
+   "nom": "Bernard",
+   "prenom": "Jean-Claude",
+   "dob": "15/04/1967",
+   "nss": "1670415234567",
+   "profession": "Technicien de maintenance",
+   "college": "Non-cadre",
+   "telephone": "06 45 67 89 01",
+   "email": "jc.bernard@edf.fr",
+   "adresse": "5 impasse des Peupliers, 75013 Paris",
+   "societe": "EDF",
+   "dossier_sinistre": "SIN-2024-08312",
+   "numero_mercer": "MC-EDF-002210",
+   "partition": "MERCERAPPA",
+   "entreprise": "EDF",
+   "assureur": "Allianz",
+   "debut": "18/06/2024",
+   "fin": "16/07/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Suivi",
+   "duree": "28",
+   "temps_partiel": "Oui — 50%",
+   "patho": "Hypertension artérielle sévère",
+   "cim10": "I10",
+   "commentaire": "HTA mal équilibrée malgré trithérapie. Bilan cardiologique prévu. Repos et réduction du stress recommandés.",
+   "traitement": "Amlodipine (5mg - 1 par jour le matin)\nLosartan (50mg - 1 par jour le soir)\nIndapamide (1,5mg - 1 par jour le matin)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Oui",
+   "patho_anterieure": "Oui",
+   "patho_consecutive": "Non",
+   "ald": "Oui",
+   "soumission": "05/07/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical suivi.pdf",
+     "type": "pdf",
+     "size": "88 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "05/07/2024 15:15",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "05/07/2024 16:00",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "05/07/2024 16:45",
+     "action": "Formulaire suivi soumis",
+     "auteur": "Jean-Claude Bernard (Assuré)",
+     "color": "#1d4ed8"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "05/07/2024 17:00",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Temps partiel thérapeutique à 50% cohérent avec le profil HTA. Je vérifie le bilan cardiologique avant validation."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00128",
+   "status": "pieces",
+   "pieces_statut": "attente",
+   "parcours": [
+    "valider",
+    "pieces"
+   ],
+   "urgence": "Haute",
+   "type": "Initial",
+   "nom": "Fontaine",
+   "prenom": "Isabelle",
+   "dob": "03/06/1979",
+   "nss": "2790603345678",
+   "profession": "Chargée de clientèle",
+   "college": "Non-cadre",
+   "telephone": "06 56 78 90 12",
+   "email": "isabelle.fontaine@socgen.com",
+   "adresse": "31 boulevard Haussmann, 75009 Paris",
+   "societe": "Société Générale",
+   "dossier_sinistre": "SIN-2024-08201",
+   "numero_mercer": "MC-SG-009845",
+   "partition": "MERCERAPPA",
+   "entreprise": "Société Générale",
+   "assureur": "AXA France",
+   "debut": "10/06/2024",
+   "fin": "08/07/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Initial",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "Syndrome d'épuisement professionnel",
+   "cim10": "Z73.0",
+   "commentaire": "Burn-out sévère avec troubles anxieux associés. Documents complémentaires demandés le 02/07.",
+   "traitement": "Venlafaxine (75mg - 1 par jour le matin)\nAlprazolam (0,25mg - si crise d'angoisse)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Non",
+   "ald": "Non",
+   "soumission": "28/06/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical initial.pdf",
+     "type": "pdf",
+     "size": "102 Ko"
+    }
+   ],
+   "pieces_requises": [
+    {
+     "id": "pr1",
+     "name": "Rapport du psychologue"
+    },
+    {
+     "id": "pr2",
+     "name": "Attestation de l'employeur"
+    }
+   ],
+   "historique": [
+    {
+     "date": "28/06/2024 08:30",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "28/06/2024 09:15",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "28/06/2024 10:00",
+     "action": "Formulaire soumis",
+     "auteur": "Isabelle Fontaine (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "02/07/2024 11:30",
+     "action": "Demande de pièces complémentaires envoyée",
+     "auteur": "Dr. Martin",
+     "color": "#D97706"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "02/07/2024 11:35",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Pièces manquantes pour le burn-out : bilan psychologique et attestation employeur demandés à l'assurée."
+    },
+    {
+     "date": "05/07/2024 15:20",
+     "auteur": "Isabelle Fontaine",
+     "role": "Assuré",
+     "texte": "Bonjour, mon psychologue m'a dit que son rapport serait prêt la semaine prochaine, merci de votre patience."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00125",
+   "status": "pieces",
+   "pieces_statut": "recues",
+   "parcours": [
+    "valider",
+    "pieces"
+   ],
+   "urgence": "Moyenne",
+   "type": "Suivi",
+   "nom": "Garnier",
+   "prenom": "Paul",
+   "dob": "22/08/1983",
+   "nss": "1830822456789",
+   "profession": "Opérateur de production",
+   "college": "Non-cadre",
+   "telephone": "06 67 89 01 23",
+   "email": "paul.garnier@renault.com",
+   "adresse": "2 rue des Fabriques, 92100 Boulogne-Billancourt",
+   "societe": "Renault",
+   "dossier_sinistre": "SIN-2024-08085",
+   "numero_mercer": "MC-RNT-003367",
+   "partition": "MERCERAPPA",
+   "entreprise": "Renault",
+   "assureur": "Generali",
+   "debut": "03/06/2024",
+   "fin": "01/07/2024",
+   "type_arret": "Maladie professionnelle",
+   "type_cert": "Suivi",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "TMS — Épaule droite",
+   "cim10": "M75.1",
+   "commentaire": "Tendinopathie de la coiffe des rotateurs droite. Infiltration cortisone réalisée. Résultats IRM manquants.",
+   "traitement": "Ibuprofène (400mg - 3 fois par jour pendant les repas)\nParacétamol (1g - si douleur)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Oui",
+   "patho_anterieure": "Oui",
+   "patho_consecutive": "Non",
+   "ald": "Non",
+   "soumission": "20/06/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat suivi.pdf",
+     "type": "pdf",
+     "size": "79 Ko"
+    }
+   ],
+   "pieces_requises": [
+    {
+     "id": "pr1",
+     "name": "IRM épaule droite"
+    }
+   ],
+   "historique": [
+    {
+     "date": "20/06/2024 12:30",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "20/06/2024 13:15",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "20/06/2024 14:00",
+     "action": "Formulaire suivi soumis",
+     "auteur": "Paul Garnier (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "25/06/2024 09:15",
+     "action": "Demande IRM épaule droite envoyée",
+     "auteur": "Dr. Martin",
+     "color": "#D97706"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "25/06/2024 09:20",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "IRM épaule reçue, je transmets au médecin conseil pour avis sur la poursuite de l'arrêt."
+    },
+    {
+     "date": "27/06/2024 13:40",
+     "auteur": "Dr. Lefèvre",
+     "role": "Médecin conseil",
+     "texte": "IRM compatible avec tendinopathie décrite. Durée d'arrêt proposée cohérente avec le référentiel."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00119",
+   "status": "expertise",
+   "parcours": [
+    "valider",
+    "expertise"
+   ],
+   "urgence": "Haute",
+   "type": "Initial",
+   "nom": "Rousseau",
+   "prenom": "Amélie",
+   "dob": "09/02/1990",
+   "nss": "2900209567890",
+   "profession": "Responsable marketing",
+   "college": "Cadre",
+   "telephone": "06 78 90 12 34",
+   "email": "amelie.rousseau@lvmh.com",
+   "adresse": "22 avenue Montaigne, 75008 Paris",
+   "societe": "LVMH",
+   "dossier_sinistre": "SIN-2024-07943",
+   "numero_mercer": "MC-LVMH-005512",
+   "partition": "MERCERAPPA",
+   "entreprise": "LVMH",
+   "assureur": "Allianz",
+   "debut": "27/05/2024",
+   "fin": "24/06/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Initial",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "Hernie discale C5-C6",
+   "cim10": "M50.1",
+   "commentaire": "Névralgies cervico-brachiales droites invalidantes. Traitement médical insuffisant, expertise chirurgicale en cours.",
+   "traitement": "Prégabaline (75mg - 2 fois par jour)\nParacétamol/Codéine (1 comprimé - 3 fois par jour, si douleur)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Oui",
+   "ald": "Non",
+   "soumission": "14/06/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical initial.pdf",
+     "type": "pdf",
+     "size": "118 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "IRM cervicale 10-06.jpg",
+     "type": "img",
+     "size": "3.1 Mo"
+    }
+   ],
+   "historique": [
+    {
+     "date": "14/06/2024 13:50",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "14/06/2024 14:35",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "14/06/2024 15:20",
+     "action": "Formulaire soumis",
+     "auteur": "Amélie Rousseau (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "18/06/2024 10:00",
+     "action": "Demande d'expertise médicale — Dr. Bernard (Orthopédie)",
+     "auteur": "Dr. Martin",
+     "color": "#6D28D9"
+    },
+    {
+     "date": "20/06/2024 14:30",
+     "action": "Dossier transmis au médecin conseil",
+     "auteur": "Système CellMed",
+     "color": "#64748b"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "18/06/2024 10:05",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Hernie discale cervicale avec échec du traitement médical. Demande d'expertise envoyée au Dr. Bernard."
+    },
+    {
+     "date": "22/06/2024 09:30",
+     "auteur": "Dr. Bernard",
+     "role": "Expert orthopédiste",
+     "texte": "Indication chirurgicale à discuter. Je recommande de maintenir l'arrêt dans l'attente de la consultation spécialisée."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00108",
+   "status": "clotures",
+   "parcours": [
+    "valider",
+    "clotures"
+   ],
+   "urgence": "Basse",
+   "type": "Suivi",
+   "nom": "Petit",
+   "prenom": "Nicolas",
+   "dob": "14/07/1977",
+   "nss": "1770714678901",
+   "profession": "Technicien réseau",
+   "college": "Non-cadre",
+   "telephone": "06 89 01 23 45",
+   "email": "nicolas.petit@orange.fr",
+   "adresse": "78 rue Olivier de Serres, 75015 Paris",
+   "societe": "Orange",
+   "dossier_sinistre": "SIN-2024-07521",
+   "numero_mercer": "MC-ORG-008891",
+   "partition": "MERCERAPPA",
+   "entreprise": "Orange",
+   "assureur": "AXA France",
+   "debut": "12/05/2024",
+   "fin": "09/06/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Suivi",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "Gastro-entérite aiguë",
+   "cim10": "A09",
+   "commentaire": "Dossier validé, reprise du travail confirmée.",
+   "traitement": "Racécadotril (100mg - 3 fois par jour, si besoin)\nRéhydratation orale",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Non",
+   "ald": "Non",
+   "soumission": "01/06/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical suivi.pdf",
+     "type": "pdf",
+     "size": "67 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "01/06/2024 07:30",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "01/06/2024 08:15",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "01/06/2024 09:00",
+     "action": "Formulaire soumis",
+     "auteur": "Nicolas Petit (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "03/06/2024 11:00",
+     "action": "Dossier validé — Arrêt conforme",
+     "auteur": "Dr. Martin",
+     "color": "#14853D"
+    },
+    {
+     "date": "03/06/2024 11:15",
+     "action": "Clôture du dossier",
+     "auteur": "Dr. Martin",
+     "color": "#14853D"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "03/06/2024 11:05",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Reprise du travail confirmée par l'assuré, dossier clôturé sans suite particulière."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00098",
+   "status": "clotures",
+   "parcours": [
+    "valider",
+    "pieces",
+    "expertise",
+    "clotures"
+   ],
+   "urgence": "Haute",
+   "type": "Initial",
+   "nom": "Moreau",
+   "prenom": "Julien",
+   "dob": "19/02/1980",
+   "nss": "1800219321456",
+   "profession": "Chef d'équipe logistique",
+   "college": "Non-cadre",
+   "telephone": "06 71 23 45 09",
+   "email": "julien.moreau@fnac.com",
+   "adresse": "3 rue des Entrepôts, 94220 Charenton-le-Pont",
+   "societe": "Fnac Darty",
+   "dossier_sinistre": "SIN-2024-07698",
+   "numero_mercer": "MC-FD-005612",
+   "partition": "MERCERAPPA",
+   "entreprise": "Fnac Darty",
+   "assureur": "Generali",
+   "debut": "22/04/2024",
+   "fin": "20/05/2024",
+   "type_arret": "Accident de travail",
+   "type_cert": "Initial",
+   "duree": "28",
+   "temps_partiel": "Non",
+   "patho": "Hernie discale lombaire L5-S1",
+   "cim10": "M51.1",
+   "commentaire": "Hernie discale L5-S1 suite à un effort de manutention. Dossier complexe ayant nécessité des pièces complémentaires puis une expertise médicale avant clôture.",
+   "traitement": "Tramadol (50mg - 2 fois par jour, si douleur)\nKinésithérapie (3 séances par semaine)",
+   "hospitalisation": "Oui",
+   "arret_anterieur": "Non",
+   "patho_anterieure": "Non",
+   "patho_consecutive": "Oui",
+   "ald": "Non",
+   "soumission": "25/04/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical initial.pdf",
+     "type": "pdf",
+     "size": "128 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "IRM lombaire 24-04-2024.jpg",
+     "type": "img",
+     "size": "2.7 Mo"
+    },
+    {
+     "id": "doc3",
+     "name": "Compte-rendu expertise Dr. Girard.pdf",
+     "type": "pdf",
+     "size": "156 Ko"
+    },
+    {
+     "id": "doc4",
+     "name": "Déclaration AT employeur.pdf",
+     "type": "pdf",
+     "size": "198 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "25/04/2024 08:10",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "25/04/2024 08:55",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "25/04/2024 09:40",
+     "action": "Formulaire soumis par l'assuré",
+     "auteur": "Julien Moreau (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "25/04/2024 09:40",
+     "action": "Documents uploadés (2 fichiers)",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "29/04/2024 14:20",
+     "action": "Dossier validé — passage en attente de pièces complémentaires",
+     "auteur": "Dr. Martin",
+     "color": "#C53532"
+    },
+    {
+     "date": "29/04/2024 14:25",
+     "action": "Demande de pièces complémentaires envoyée (déclaration AT)",
+     "auteur": "Dr. Martin",
+     "color": "#D97706"
+    },
+    {
+     "date": "06/05/2024 10:05",
+     "action": "Pièces complémentaires reçues",
+     "auteur": "Julien Moreau (Assuré)",
+     "color": "#D97706"
+    },
+    {
+     "date": "08/05/2024 09:30",
+     "action": "Dossier transmis pour expertise médicale — Dr. Girard (Rhumatologie)",
+     "auteur": "Dr. Martin",
+     "color": "#6D28D9"
+    },
+    {
+     "date": "16/05/2024 16:45",
+     "action": "Rapport d'expertise médicale reçu",
+     "auteur": "Dr. Girard (Médecin expert)",
+     "color": "#6D28D9"
+    },
+    {
+     "date": "20/05/2024 11:00",
+     "action": "Dossier validé — Arrêt conforme au rapport d'expertise",
+     "auteur": "Dr. Martin",
+     "color": "#14853D"
+    },
+    {
+     "date": "20/05/2024 11:10",
+     "action": "Clôture du dossier",
+     "auteur": "Dr. Martin",
+     "color": "#14853D"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "29/04/2024 14:22",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Déclaration AT manquante à l'ouverture du dossier, demande de pièces complémentaires envoyée."
+    },
+    {
+     "date": "08/05/2024 09:35",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Pièces reçues et conformes. Au vu de la sévérité de la hernie, transmission pour expertise médicale avant décision finale."
+    },
+    {
+     "date": "16/05/2024 17:00",
+     "auteur": "Dr. Girard",
+     "role": "Médecin expert",
+     "texte": "Hernie discale confirmée par imagerie, arrêt de travail justifié pour la durée prescrite. Pas d'objection à la validation."
+    },
+    {
+     "date": "20/05/2024 11:05",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Avis d'expertise favorable. Dossier validé et clôturé."
+    }
+   ]
+  },
+  {
+   "id": "MQC-2024-00155",
+   "status": "avis-medical",
+   "parcours": [
+    "valider",
+    "avis-medical"
+   ],
+   "urgence": "Haute",
+   "type": "Suivi",
+   "nom": "Leroy",
+   "prenom": "Camille",
+   "dob": "22/11/1988",
+   "nss": "2881122084231",
+   "profession": "Gestionnaire sinistres",
+   "college": "Cadre",
+   "telephone": "06 90 12 34 56",
+   "email": "camille.leroy@axa.fr",
+   "adresse": "313 Terrasses de l'Arche, 92727 Nanterre",
+   "societe": "AXA France",
+   "dossier_sinistre": "SIN-2024-09012",
+   "numero_mercer": "MC-AXA-001456",
+   "partition": "MERCERAPPA",
+   "entreprise": "AXA France",
+   "assureur": "Allianz",
+   "debut": "10/07/2024",
+   "fin": "09/08/2024",
+   "type_arret": "Maladie non professionnelle",
+   "type_cert": "Suivi",
+   "duree": "30",
+   "temps_partiel": "Non",
+   "patho": "Syndrome burnout sévère",
+   "cim10": "Z73.0",
+   "commentaire": "Épuisement professionnel important avec anxiété généralisée. Dossier transmis au médecin conseil pour avis avant décision.",
+   "traitement": "Venlafaxine (150mg - 1 par jour le matin)\nHydroxyzine (25mg - au coucher si besoin)",
+   "hospitalisation": "Non",
+   "arret_anterieur": "Oui",
+   "patho_anterieure": "Oui",
+   "patho_consecutive": "Non",
+   "ald": "Oui",
+   "soumission": "18/07/2024",
+   "docs": [
+    {
+     "id": "doc1",
+     "name": "Certificat médical suivi.pdf",
+     "type": "pdf",
+     "size": "112 Ko"
+    },
+    {
+     "id": "doc2",
+     "name": "Rapport psychologue.pdf",
+     "type": "pdf",
+     "size": "95 Ko"
+    }
+   ],
+   "historique": [
+    {
+     "date": "18/07/2024 07:45",
+     "action": "Envoi CMD",
+     "auteur": "Médecin traitant",
+     "color": "#64748b"
+    },
+    {
+     "date": "18/07/2024 08:30",
+     "action": "Réception CMD",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "18/07/2024 09:15",
+     "action": "Formulaire soumis par l'assuré",
+     "auteur": "Camille Leroy (Assuré)",
+     "color": "#1d4ed8"
+    },
+    {
+     "date": "18/07/2024 09:15",
+     "action": "Documents uploadés (2 fichiers)",
+     "auteur": "Système eCMD",
+     "color": "#64748b"
+    },
+    {
+     "date": "18/07/2024 11:30",
+     "action": "Dossier transmis pour avis médical",
+     "auteur": "Dr. Martin",
+     "color": "#0d9488"
+    }
+   ],
+   "commentaires": [
+    {
+     "date": "18/07/2024 11:35",
+     "auteur": "Dr. Martin",
+     "role": "Gestionnaire",
+     "texte": "Dossier complexe (burn-out récidivant). Je transmets pour avis médical avant toute décision de prolongation."
+    },
+    {
+     "date": "19/07/2024 14:15",
+     "auteur": "Dr. Lefèvre",
+     "role": "Médecin conseil",
+     "texte": "Je prends connaissance du dossier et du rapport du psychologue. Retour sous 48h."
+    }
+   ]
+  }
+ ],
+ "pathologies": [
+  {
+   "code": "M51.1",
+   "groupe": "Affections Ostéo-Articulaires",
+   "libelle": "Lombosciatique L4-L5",
+   "categorie": "Ostéo-articulaire",
+   "duree_std": 28,
+   "synonymes": "Sciatalgie, Hernie discale lombaire, Radiculopathie L4-L5",
+   "commentaire": "Compression radiculaire par hernie discale. Arrêt recommandé selon intensité de la douleur et type de travail. Kinésithérapie conseillée.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Protocole prise en charge lombosciatique.pdf",
+     "type": "pdf",
+     "size": "340 Ko"
+    },
+    {
+     "id": "pd2",
+     "name": "Guide AT lombalgies 2024.pdf",
+     "type": "pdf",
+     "size": "215 Ko"
+    }
+   ]
+  },
+  {
+   "code": "F32.2",
+   "groupe": "Affections psychiatriques",
+   "libelle": "Dépression sévère",
+   "categorie": "Psychiatrique",
+   "duree_std": 60,
+   "synonymes": "Épisode dépressif majeur, Dépression unipolaire, MDD",
+   "commentaire": "Épisode dépressif sévère sans symptômes psychotiques. Arrêt prolongé fréquent. Suivi psychiatrique indispensable. Réévaluation à 30 jours.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Guide clinique dépression sévère.pdf",
+     "type": "pdf",
+     "size": "412 Ko"
+    }
+   ]
+  },
+  {
+   "code": "I21.0",
+   "groupe": "Affections cardio-vasculaires",
+   "libelle": "Infarctus du myocarde antérieur",
+   "categorie": "Cardiologique",
+   "duree_std": 90,
+   "synonymes": "IDM, Crise cardiaque, STEMI antérieur",
+   "commentaire": "Infarctus transmural antérieur. Arrêt systématique avec réévaluation cardiologique à 6 semaines. Réhabilitation cardiaque recommandée.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Protocole réhabilitation cardiaque.pdf",
+     "type": "pdf",
+     "size": "528 Ko"
+    },
+    {
+     "id": "pd2",
+     "name": "Critères reprise travail post-IDM.pdf",
+     "type": "pdf",
+     "size": "189 Ko"
+    },
+    {
+     "id": "pd3",
+     "name": "Tableau durées AT cardiologie.xlsx",
+     "type": "other",
+     "size": "92 Ko"
+    }
+   ]
+  },
+  {
+   "code": "G43.1",
+   "groupe": "Affections neurologiques",
+   "libelle": "Migraine avec aura",
+   "categorie": "Neurologique",
+   "duree_std": 3,
+   "synonymes": "Migraine ophtalmique, Migraine classique, Céphalée avec aura",
+   "commentaire": "Crise migraineuse avec aura visuelle ou sensorielle. Arrêts courts mais répétitifs. Tenir compte de la fréquence des crises sur 3 mois.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Échelle MIDAS — évaluation migraine.pdf",
+     "type": "pdf",
+     "size": "145 Ko"
+    }
+   ]
+  },
+  {
+   "code": "K57.3",
+   "groupe": "Affections de l'appareil digestif",
+   "libelle": "Diverticulite sigmoïdienne",
+   "categorie": "Gastro-entérologique",
+   "duree_std": 14,
+   "synonymes": "Diverticulose compliquée, Sigmoïdite diverticulaire",
+   "commentaire": "Poussée de diverticulite aiguë sans complication. Arrêt selon sévérité clinique et type d'activité professionnelle.",
+   "docs": []
+  },
+  {
+   "code": "Z73.0",
+   "groupe": "Affections psychiatriques",
+   "libelle": "Syndrome burnout sévère",
+   "categorie": "Psychiatrique",
+   "duree_std": 45,
+   "synonymes": "Épuisement professionnel, Burnout, Surmenage professionnel",
+   "commentaire": "Épuisement professionnel intense. Arrêt prolongé recommandé avec accompagnement psychologique.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Grille d'évaluation burnout (MBI).pdf",
+     "type": "pdf",
+     "size": "178 Ko"
+    },
+    {
+     "id": "pd2",
+     "name": "Protocole accompagnement RPS.pdf",
+     "type": "pdf",
+     "size": "294 Ko"
+    }
+   ]
+  },
+  {
+   "code": "S82.0",
+   "groupe": "Affections Ostéo-Articulaires",
+   "libelle": "Fracture du col du péroné",
+   "categorie": "Ostéo-articulaire",
+   "duree_std": 42,
+   "synonymes": "Fracture péroné proximal, Fracture malléolaire",
+   "commentaire": "Fracture du segment proximal du péroné. Durée variable selon traitement chirurgical vs conservateur.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Tableau durées AT fractures membres inférieurs.pdf",
+     "type": "pdf",
+     "size": "210 Ko"
+    }
+   ]
+  },
+  {
+   "code": "J45.1",
+   "groupe": "Affections de l'appareil respiratoire",
+   "libelle": "Asthme persistant sévère",
+   "categorie": "Autre",
+   "duree_std": 7,
+   "synonymes": "Asthme grave, Asthme difficile à contrôler",
+   "commentaire": "Arrêt court lors des exacerbations. Durée prolongée si exposition professionnelle à l'allergène causal.",
+   "docs": []
+  },
+  {
+   "code": "S62.5",
+   "groupe": "Affections Ostéo-Articulaires",
+   "libelle": "Fracture du poignet droit",
+   "categorie": "Ostéo-articulaire",
+   "duree_std": 35,
+   "synonymes": "Fracture extrémité inférieure radius, Fracture de Pouteau-Colles",
+   "commentaire": "Fracture du poignet avec immobilisation. Arrêt selon profession (manuelle ou non) et évolution de la consolidation.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Protocole immobilisation fracture poignet.pdf",
+     "type": "pdf",
+     "size": "198 Ko"
+    },
+    {
+     "id": "pd2",
+     "name": "Critères reprise travail manuel.pdf",
+     "type": "pdf",
+     "size": "142 Ko"
+    }
+   ]
+  },
+  {
+   "code": "I10",
+   "groupe": "Affections cardio-vasculaires",
+   "libelle": "Hypertension artérielle sévère",
+   "categorie": "Cardiologique",
+   "duree_std": 21,
+   "synonymes": "HTA sévère, Poussée hypertensive",
+   "commentaire": "Hypertension artérielle sévère nécessitant équilibration thérapeutique. Arrêt selon réponse au traitement et retentissement.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Protocole équilibration HTA.pdf",
+     "type": "pdf",
+     "size": "176 Ko"
+    }
+   ]
+  },
+  {
+   "code": "M75.1",
+   "groupe": "Affections Ostéo-Articulaires",
+   "libelle": "TMS — Épaule droite",
+   "categorie": "Ostéo-articulaire",
+   "duree_std": 30,
+   "synonymes": "Syndrome de la coiffe des rotateurs, Tendinopathie de l'épaule, TMS épaule",
+   "commentaire": "Trouble musculo-squelettique de l'épaule. Arrêt selon intensité fonctionnelle et poste de travail. Kinésithérapie recommandée.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Guide TMS épaule — prise en charge.pdf",
+     "type": "pdf",
+     "size": "233 Ko"
+    },
+    {
+     "id": "pd2",
+     "name": "Fiche ergonomie poste de travail.pdf",
+     "type": "pdf",
+     "size": "118 Ko"
+    }
+   ]
+  },
+  {
+   "code": "M50.1",
+   "groupe": "Affections Ostéo-Articulaires",
+   "libelle": "Hernie discale C5-C6",
+   "categorie": "Ostéo-articulaire",
+   "duree_std": 28,
+   "synonymes": "Cervicobrachialgie, Radiculopathie cervicale C5-C6",
+   "commentaire": "Hernie discale cervicale avec irradiation. Arrêt selon intensité douloureuse et type de poste. Suivi rééducatif conseillé.",
+   "docs": [
+    {
+     "id": "pd1",
+     "name": "Protocole prise en charge cervicobrachialgie.pdf",
+     "type": "pdf",
+     "size": "207 Ko"
+    }
+   ]
+  },
+  {
+   "code": "A09",
+   "groupe": "Affections de l'appareil digestif",
+   "libelle": "Gastro-entérite aiguë",
+   "categorie": "Gastro-entérologique",
+   "duree_std": 4,
+   "synonymes": "Gastro-entérite infectieuse, Diarrhée aiguë infectieuse",
+   "commentaire": "Épisode infectieux aigu digestif. Arrêt court, réévaluation si persistance au-delà de 5 jours.",
+   "docs": []
+  }
+ ]
+}

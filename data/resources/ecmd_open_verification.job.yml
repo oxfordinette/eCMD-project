@@ -1,0 +1,18 @@
+resources:
+  jobs:
+    ecmd_open_verification:
+      name: ecmd-open-verification-${bundle.target}
+      description: >
+        Contrôle la base SQL Server d'Open par rapport au contrat de lecture eCMD
+        (tables, colonnes, types, DATE_MAJ, codes). À lancer avant d'activer l'ingestion.
+      parameters:
+        - name: source_open
+          default: ${var.source_open}
+        - name: mode_source
+          default: ${var.mode_source}
+        - name: secret_scope
+          default: ${var.secret_scope}
+      tasks:
+        - task_key: verifier_open
+          notebook_task:
+            notebook_path: ../src/federation/verifier_open.py

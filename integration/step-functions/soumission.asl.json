@@ -1,0 +1,45 @@
+{
+  "Comment": "eCMD — traitement d'un certificat médical soumis. Lancée par le backend avec {invitation_id} (aucune donnée de santé dans l'historique). Crée le dossier CellMed dans Lakebase puis envoie l'accusé de réception.",
+  "StartAt": "TraitementsComplementaires",
+  "States": {
+    "TraitementsComplementaires": {
+      "Type": "Pass",
+      "Comment": "Emplacement réservé aux traitements à venir avant la création du dossier : contrôles, OCR des pièces, appel à Open… (remplacer par des états Task ou Parallel).",
+      "Next": "CreerDossier"
+    },
+    "CreerDossier": {
+      "Type": "Task",
+      "Resource": "${CREER_DOSSIER_FUNCTION_ARN}",
+      "ResultPath": "$.dossier",
+      "Retry": [
+        { "ErrorEquals": ["SoumissionInvalide"], "MaxAttempts": 0 },
+        { "ErrorEquals": ["States.ALL"], "IntervalSeconds": 5, "MaxAttempts": 4, "BackoffRate": 2 }
+      ],
+      "Catch": [
+        { "ErrorEquals": ["States.ALL"], "ResultPath": "$.erreur", "Next": "EchecCreationDossier" }
+      ],
+      "Next": "EnvoyerAccuseReception"
+    },
+    "EchecCreationDossier": {
+      "Type": "Fail",
+      "Error": "CreationDossierImpossible",
+      "Cause": "Le dossier n'a pas pu être créé : voir l'erreur de l'état CreerDossier. Une fois la cause corrigée, relancer l'exécution (Redrive)."
+    },
+    "EnvoyerAccuseReception": {
+      "Type": "Task",
+      "Resource": "${ENVOYER_ACCUSE_FUNCTION_ARN}",
+      "ResultPath": "$.accuse",
+      "Retry": [
+        { "ErrorEquals": ["ErreurTemporaire", "Lambda.ServiceException", "Lambda.TooManyRequestsException"],
+          "IntervalSeconds": 5, "MaxAttempts": 3, "BackoffRate": 2 }
+      ],
+      "Catch": [
+        { "ErrorEquals": ["States.ALL"], "ResultPath": "$.erreur_accuse", "Next": "DossierCree" }
+      ],
+      "Next": "DossierCree"
+    },
+    "DossierCree": {
+      "Type": "Succeed"
+    }
+  }
+}

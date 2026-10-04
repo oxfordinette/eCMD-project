@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DeclencherInvitations",
+      "Effect": "Allow",
+      "Action": "states:StartExecution",
+      "Resource": "arn:aws:states:eu-west-3:<compte-aws>:stateMachine:ecmd-invitations-automatiques"
+    },
+    {
+      "Sid": "SuivreLesEnvois",
+      "Effect": "Allow",
+      "Action": "states:DescribeExecution",
+      "Resource": "arn:aws:states:eu-west-3:<compte-aws>:execution:ecmd-invitations-automatiques:*"
+    }
+  ]
+}

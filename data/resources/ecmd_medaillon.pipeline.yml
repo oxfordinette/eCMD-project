@@ -1,0 +1,18 @@
+resources:
+  pipelines:
+    ecmd_medaillon:
+      name: ecmd-medaillon-${bundle.target}
+      catalog: ${var.catalog}
+      schema: silver            # schéma par défaut ; les tables gold sont publiées dans ${var.catalog}.gold
+      serverless: true
+      channel: CURRENT
+      continuous: false         # déclenché par le job après chaque ingestion
+      configuration:
+        catalog: ${var.catalog}
+        # Âge maximal (jours) d'un arrêt pour qu'une invitation soit proposée
+        fenetre_invitation_jours: "90"
+      libraries:
+        - glob:
+            include: ../src/pipeline/silver/**
+        - glob:
+            include: ../src/pipeline/gold/**

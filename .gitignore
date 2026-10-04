@@ -1,0 +1,22 @@
+# Secrets : ne jamais commiter (modèle sans secret : cellmed/.env.example)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node / builds
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Databricks (état local du bundle)
+.databricks/
+
+# Divers
+.DS_Store
+*.log

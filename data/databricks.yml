@@ -1,0 +1,88 @@
+# Databricks Asset Bundle — données eCMD (architecture médaillon)
+#
+#   Open (backoffice) ──► bronze ──► silver ──► gold ──► Lakebase (table synchronisée) ──► API eCMD
+#
+# Déploiement :
+#   databricks bundle validate -t dev
+#   databricks bundle deploy   -t dev
+#   databricks bundle run ecmd_open_medaillon -t dev
+bundle:
+  name: ecmd-data
+
+include:
+  - resources/*.yml
+
+variables:
+  catalog:
+    description: Catalogue Unity Catalog d'eCMD (schémas bronze, silver, gold)
+    default: ecmd_dev
+  source_open:
+    description: >
+      Schéma où lire les tables Open, sous la forme <catalogue>.<schéma>.
+      - Lakehouse Federation : catalogue étranger sur la base SQL Server d'Open (ex. open_fed.dbo)
+      - Simulateur : ${var.catalog}.open_sim (alimenté par la tâche simulateur)
+    default: ecmd_dev.open_sim
+  mode_source:
+    description: "table = Lakehouse Federation ou simulateur (recommandé) ; jdbc = connexion JDBC SQL Server directe"
+    default: table
+  secret_scope:
+    description: Secret scope des identifiants SQL Server d'Open (host, port, database, user, password)
+    default: ecmd-open
+  recouvrement_minutes:
+    description: Minutes relues à chaque passage pour rattraper les transactions Open validées tardivement
+    default: "10"
+  simuler_open:
+    description: "true = alimente le schéma open_sim avec des données fictives avant l'ingestion"
+    default: "true"
+  planification:
+    description: Expression Quartz de planification du job
+    default: "0 */15 * * * ?"   # toutes les 15 minutes
+  pipeline_synchro_lakebase:
+    description: >
+      ID du pipeline de la table synchronisée Lakebase ecmd_gold.sinistre_prerempli (affiché sur la page de la
+      table synchronisée, mode Snapshot). Obligatoire : à renseigner dans chaque cible.
+  mode_declenchement:
+    description: "journal = affiche les nouveaux sinistres sans appeler AWS ; aws = envoi réel à Step Functions"
+    default: journal
+  service_credential:
+    description: Service credential Unity Catalog donnant accès au rôle IAM de déclenchement (voir README)
+    default: ecmd-aws-stepfunctions
+  state_machine_arn:
+    description: ARN de la machine à états ecmd-invitations-automatiques
+    default: ""
+  aws_region:
+    description: Région AWS de Step Functions
+    default: eu-west-3
+  aws_endpoint_url:
+    description: Uniquement pour LocalStack joignable par un tunnel (ex. https://xxxx.ngrok.app). Vide = AWS réel
+    default: ""
+  alerte_email:
+    description: Email notifié en cas d'échec du job
+    default: sarahbaraket560@gmail.com
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-db45eff8-0dff.cloud.databricks.com
+    variables:
+      catalog: ecmd_dev
+      source_open: ecmd_dev.open_sim
+      simuler_open: "true"
+      mode_declenchement: journal
+      pipeline_synchro_lakebase: 379e3b72-4102-4e79-b30f-a6b310c58403
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-db45eff8-0dff.cloud.databricks.com
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
+    variables:
+      catalog: ecmd
+      source_open: open_fed.dbo      # catalogue fédéré vers la base SQL Server d'Open (src/federation/connexion_open.sql)
+      mode_source: table
+      simuler_open: "false"
+      mode_declenchement: aws
+      # state_machine_arn: arn:aws:states:eu-west-3:<compte>:stateMachine:ecmd-invitations-automatiques
+      # pipeline_synchro_lakebase: <id du pipeline de la table synchronisée>

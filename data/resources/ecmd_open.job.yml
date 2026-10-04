@@ -1,0 +1,85 @@
+resources:
+  jobs:
+    ecmd_open_medaillon:
+      name: ecmd-open-medaillon-${bundle.target}
+      description: >
+        Récupère les assurés, contrats et sinistres d'Open (bronze), met à jour silver et gold,
+        met à jour la copie Lakebase de gold.sinistre_prerempli, puis envoie les nouveaux sinistres
+        (gold.nouveau_sinistre) à AWS Step Functions qui envoie les invitations par email.
+      schedule:
+        quartz_cron_expression: ${var.planification}
+        timezone_id: Europe/Paris
+        pause_status: PAUSED      # à activer une fois la source Open branchée
+      max_concurrent_runs: 1
+      email_notifications:
+        on_failure:
+          - ${var.alerte_email}
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: source_open
+          default: ${var.source_open}
+        - name: simuler_open
+          default: ${var.simuler_open}
+        - name: mode_source
+          default: ${var.mode_source}
+        - name: secret_scope
+          default: ${var.secret_scope}
+        - name: recouvrement_minutes
+          default: ${var.recouvrement_minutes}
+      tasks:
+        - task_key: preparer_schemas
+          notebook_task:
+            notebook_path: ../src/ingestion/00_preparer_schemas.py
+
+        - task_key: simuler_open
+          depends_on:
+            - task_key: preparer_schemas
+          condition_task:
+            op: EQUAL_TO
+            left: "{{job.parameters.simuler_open}}"
+            right: "true"
+
+        - task_key: alimenter_simulateur
+          depends_on:
+            - task_key: simuler_open
+              outcome: "true"
+          notebook_task:
+            notebook_path: ../src/simulateur/simuler_open.py
+
+        - task_key: ingestion_bronze
+          depends_on:
+            - task_key: alimenter_simulateur
+            - task_key: simuler_open
+              outcome: "false"
+          run_if: AT_LEAST_ONE_SUCCESS
+          notebook_task:
+            notebook_path: ../src/ingestion/01_ingestion_bronze.py
+
+        - task_key: medaillon_silver_gold
+          depends_on:
+            - task_key: ingestion_bronze
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.ecmd_medaillon.id}
+            full_refresh: false
+
+        # Mise à jour de la copie Lakebase de gold.sinistre_prerempli (pipeline de la table synchronisée,
+        # mode Snapshot). Tâche « pipeline » native : aucun calcul n'est occupé pendant l'attente.
+        - task_key: synchroniser_lakebase
+          depends_on:
+            - task_key: medaillon_silver_gold
+          pipeline_task:
+            pipeline_id: ${var.pipeline_synchro_lakebase}
+
+        - task_key: declencher_invitations
+          depends_on:
+            - task_key: synchroniser_lakebase
+          notebook_task:
+            notebook_path: ../src/invitations/02_declencher_step_functions.py
+            base_parameters:
+              mode_declenchement: ${var.mode_declenchement}
+              service_credential: ${var.service_credential}
+              state_machine_arn: ${var.state_machine_arn}
+              aws_region: ${var.aws_region}
+              aws_endpoint_url: ${var.aws_endpoint_url}
+              run_id: "{{job.run_id}}"
